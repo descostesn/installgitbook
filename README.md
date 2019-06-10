@@ -8,10 +8,14 @@ This guide is built based on https://gldraphael.com/blog/publishing-gitbook-to-g
 Install the following ubuntu packages:
 
 ```
-apt update
-apt install -y build-essential curl
-curl -sL https://deb.nodesource.com/setup_10.x | bash -
-apt install -y nodejs git emacs
+sudo apt update
+sudo apt install -y build-essential curl
+curl rl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+sudo apt install -y nodejs git emacs
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update
+sudo apt install -y --no-install-recommends yarn
 ```
 
 ## Install and initialize gitbook
@@ -64,4 +68,21 @@ git add .
 git commit -m "first commit"
 git remote add origin https://github.com/descostesn/gitbook-test.git ## replacing by your github username
 git push -u origin master
+```
+
+To publish a Github site, you need to push the source files to a gh-pages branch.
+
+```
+git branch gh-pages
+git checkout gh-pages
+git push -u origin gh-pages
+git checkout master
+```
+
+## Set up a gulp task to publish to GitHub Pages
+
+If the command below does not work, try running it with sudo:
+
+```
+yarn init
 ```
