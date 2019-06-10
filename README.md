@@ -54,7 +54,7 @@ _book
 
 ## Sending book on github
 
-Go to github and create a new repository gitbook-test. Then enter the following commands in your current folder:
+Go to github and create a new repository gitbook-test. Then enter the following commands in your current folder (replacing my name and email every time you should):
 
 ```
 git config --global user.email "nicolas.descostes@embl.it"
