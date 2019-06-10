@@ -81,8 +81,8 @@ git checkout master
 
 ## Set up a gulp task to publish to GitHub Pages
 
-If the command below does not work, try running it with sudo:
+If the command below does not work, try running it with sudo. Just press enter to all questions, this will create a package.json file:
 
 ```
-yarn init
+yarn init  ## or 'sudo yarn init' if this does not work
 ```
