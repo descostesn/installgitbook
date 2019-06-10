@@ -38,6 +38,11 @@ Copy paste the address http://localhost:4000 in your browser. Now create the .gi
 
 ```
 emacs .gitignore ## Press ctrl+X ctrl+S to save followed by ctrl+X ctrl+C to quit
+```
+
+That should contain:
+
+```
 .grunt
 node_modules
 _book
@@ -47,3 +52,16 @@ _book
 *~
 ```
 
+## Sending book on github
+
+Go to github and create a new repository gitbook-test. Then enter the following commands in your current folder:
+
+```
+git config --global user.email "nicolas.descostes@embl.it"
+git config --global user.name "descostesn"
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/descostesn/gitbook-test.git ## replacing by your github username
+git push -u origin master
+```
