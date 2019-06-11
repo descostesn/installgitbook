@@ -116,7 +116,15 @@ gulp publish
 
 My page is visible at  https://descostesn.github.io/gitbook-test/. You can either replace my username by yours or go to 'settings' and scroll down to see your address. 
 
-After making modifications to your book, use:
+After making modifications to your book, first commit and push the changes:
+
+```
+git add modifiedfile
+git commit -m 'I have done a modification'
+git push
+```
+
+Then:
 
 ```
 gitbook build
