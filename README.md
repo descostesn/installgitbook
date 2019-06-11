@@ -114,4 +114,13 @@ Now publish the website with:
 gulp publish
 ```
 
+My page is visible at  https://descostesn.github.io/gitbook-test/. You can either replace my username by yours or go to 'settings' and scroll down to see your address. 
+
+After making modifications to your book, use:
+
+```
+gitbook build
+gulp publish
+```
+
 
