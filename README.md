@@ -16,6 +16,7 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update
 sudo apt install -y --no-install-recommends yarn
+sudo npm install -g gulp
 ```
 
 ## Install and initialize gitbook
@@ -81,8 +82,36 @@ git checkout master
 
 ## Set up a gulp task to publish to GitHub Pages
 
-If the command below does not work, try running it with sudo. Just press enter to all questions, this will create a package.json file:
+If the command below does not work, try running it with sudo. Just press enter to all questions, this will create a package.json file and install dependencies:
 
 ```
 yarn init  ## or 'sudo yarn init' if this does not work
+yarn add gulp gulp-gh-pages gulp-load-plugins --dev
 ```
+
+Create a new file called gulpfile.js and add the following code to it:
+
+```
+const gulp = require('gulp');
+const gulpLoadPlugins = require('gulp-load-plugins');
+
+const $ = gulpLoadPlugins();
+
+// Publishes the site to GitHub Pages
+gulp.task('publish', () => {
+  console.log('Publishing to GH Pages');
+  return gulp.src('./_book/**/*')
+    .pipe($.ghPages({
+      origin: 'origin',
+      branch: 'gh-pages'
+    }));
+});
+```
+
+Now publish the website with:
+
+```
+gulp publish
+```
+
+
