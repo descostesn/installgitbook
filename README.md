@@ -22,7 +22,7 @@ sudo npm install -g gulp
 ## Install and initialize gitbook
 
 ```
-npm install -g gitbook-cli
+sudo npm install -g gitbook-cli
 git init gitbook-test
 ```
 Enter folder and initialize:
